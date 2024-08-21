@@ -1,13 +1,13 @@
-const express = require('express');
+import express from 'express';
 const router = express.Router();
-const {
+import {
   getGoals,
   setGoal,
   updateGoal,
   deleteGoal,
-} = require('../controllers/goalController');
+} from '../controllers/goalController.js';
 
-const { protect } = require('../middleware/authMiddleware');
+import { protect } from '../middleware/authMiddleware.js';
 
 // get all
 // router.get('/', getGoals);
@@ -27,4 +27,4 @@ router.route('/').get(protect, getGoals).post(protect, setGoal);
 // put and delete together
 router.route('/:id').put(protect, updateGoal).delete(protect, deleteGoal);
 
-module.exports = router;
+export default router;

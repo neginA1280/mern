@@ -1,7 +1,6 @@
-const asyncHandler = require('express-async-handler');
+import asyncHandler from 'express-async-handler';
 
-const Goal = require('../models/goalModel');
-const User = require('../models/userModel');
+import Goal from '../models/goalModel.js';
 
 // @desc Get goals
 // @route GET /api/goals
@@ -87,4 +86,4 @@ const deleteGoal = asyncHandler(async (req, res) => {
   res.status(200).json({ id: req.params.id });
 });
 
-module.exports = { getGoals, setGoal, updateGoal, deleteGoal };
+export { getGoals, setGoal, updateGoal, deleteGoal };

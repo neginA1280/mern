@@ -1,7 +1,4 @@
-const { text } = require('body-parser');
-const { timeStamp } = require('console');
-const mongoose = require('mongoose');
-const { type } = require('os');
+import mongoose from 'mongoose';
 
 // create a schema for the goals model
 const goalSchema = mongoose.Schema(
@@ -21,4 +18,4 @@ const goalSchema = mongoose.Schema(
   }
 );
 
-module.exports = mongoose.model('Goal', goalSchema);
+export default mongoose.model('Goal', goalSchema);
