@@ -24,11 +24,12 @@ const Dashboard = () => {
     // login if user is not authenticated
     if (!user) {
       navigate('/login');
+    } else {
+      dispatch(getGoals());
     }
 
     // fetch the goals from backend
     // and put it in the goals array
-    dispatch(getGoals());
 
     // reset the states on unmount,
     // when we leave the dashboard

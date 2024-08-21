@@ -16,8 +16,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 // all routes for one specific model
-app.use('/api/goals', require('./routes/goalRoutes'));
-app.use('/api/users', require('./routes/userRoutes'));
+app.use('/goals', require('./routes/goalRoutes'));
+app.use('/users', require('./routes/userRoutes'));
 
 // Serve frontend for production
 if (process.env.NODE_ENV === 'production') {
